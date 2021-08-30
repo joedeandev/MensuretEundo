@@ -618,7 +618,7 @@ const Main = () => {
       <div className={"contentRow"}>
         <p>
           <a href={"https://github.com/joedeandev/MensuretEundo"}>
-            It Measures as it Goes
+            Measuring as it Goes
           </a>
           : Enter a value, timestamp, and category in the space below to see it
           displayed on the graph. Mousing over a point on the graph displays
