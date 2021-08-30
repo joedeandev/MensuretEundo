@@ -1,0 +1,238 @@
+$theme-background: #f7fff7;
+$theme-background-alt: #ffffff;
+$theme-text: #121212;
+$theme-dark: #1a535c;
+$theme-light: #ff6b6b;
+$theme-accent: #ffe66d;
+$transition-time: 0.125s;
+$input-item-height: 4rem;
+
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $theme-background;
+  color: $theme-text;
+  font-family: "Varela Round", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 800;
+  color: $theme-dark;
+}
+
+img,
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+input,
+input:focus,
+input::-moz-focus-inner {
+  outline: none;
+  background-color: unset;
+  border: none;
+  border-bottom: 4px solid $theme-light;
+  transition: border-color $transition-time linear;
+}
+
+input:focus {
+  border-color: $theme-dark;
+}
+
+a,
+.accented {
+  color: $theme-light;
+  text-decoration: underline;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 30px);
+}
+
+#main {
+  width: 66vw;
+  min-width: 720px;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  & > img {
+    max-height: 8rem;
+  }
+}
+
+.contentRow {
+  width: 100%;
+  background-color: $theme-background-alt;
+  box-shadow: 0 10px 20px 0 rgba(26, 83, 92, 0.5);
+  border-radius: 48px;
+  padding: 24px;
+  min-height: 124px;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.button {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  color: $theme-background;
+  background-color: $theme-dark;
+  border: 2px solid $theme-dark;
+  border-radius: 48px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color $transition-time linear,
+    color $transition-time linear;
+
+  &:hover {
+    color: $theme-dark;
+    background-color: $theme-background;
+  }
+}
+
+.redButton {
+  background-color: $theme-light;
+  border-color: $theme-light;
+}
+
+.yellowButton {
+  background-color: $theme-accent;
+  border-color: $theme-accent;
+  color: $theme-dark;
+
+  &:hover {
+    color: $theme-background;
+    background-color: $theme-dark;
+    border-color: $theme-dark;
+  }
+}
+
+#signInRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+
+  & > * {
+    height: $input-item-height;
+    font-size: calc(#{$input-item-height} / 3);
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  & > input {
+    width: 60%;
+  }
+
+  & > .button {
+    width: 40%;
+  }
+}
+
+#addItemRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+
+  & > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    & > input {
+      height: $input-item-height;
+      font-size: calc(#{$input-item-height} / 3);
+      margin-left: 12px;
+      margin-right: 12px;
+      max-width: calc(33% - 24px);
+    }
+  }
+}
+
+#showDataRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+
+#dataDisplay {
+  width: 100%;
+  border: 1px solid black;
+
+  & > * {
+    position: relative;
+    transition-property: all;
+    transition-duration: $transition-time;
+    transition-timing-function: linear;
+  }
+
+  & > foreignObject {
+    overflow: visible;
+    position: relative;
+    cursor: pointer;
+
+    & > div {
+      position: absolute;
+      left: 0;
+      background-color: $theme-background;
+      box-shadow: 0 5px 10px 0 rgba(26, 83, 92, 0.5);
+      border-radius: 24px;
+      padding: 12px;
+      width: fit-content;
+      height: fit-content;
+
+      display: block;
+
+      & > div {
+        text-align: center;
+      }
+
+      & > div:nth-child(1),
+      & > div:nth-child(2) {
+        width: 50%;
+        display: inline-block;
+      }
+      & > div:nth-child(3) {
+        width: auto;
+        display: block;
+        color: $theme-text;
+      }
+    }
+  }
+}
