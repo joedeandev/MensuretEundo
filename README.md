@@ -14,6 +14,10 @@ The React client is built with [webpack](https://webpack.js.org/) (run `webpack 
 
 The project includes a [Dockerfile](./Dockerfile), enabling containerization via [Docker](https://www.docker.com/) by first building the image (`docker build . -t mensureteundo`) and then running a port-bound container (`docker run -p 80:80 -p 443:443 mensureteundo`). Consider also including environment variables for the email service, and a volume for the database. If you find that installing an entire operating system and its corresponding emulator is preferable to installing and configuring Node (which it might well be), this is the option for you.
 
+# Example
+
+![](./client/example.png)
+
 # Potential Improvements
 
 - See also: all comments marked `TODO` in [server.ts](./server/server.ts) and [index.tsx](./client/index.tsx).
